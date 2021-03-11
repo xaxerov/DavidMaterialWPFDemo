@@ -27,6 +27,14 @@
                 Width="128"
                 Margin="0 32 0 0"
                 Content="Dialog"/>
+            <Button
+                Command="{Binding RunProgressCommand}"
+                Width="128"
+                Margin="0 32 0 0"
+                Content="Progress"/>
+            <ProgressBar Width="24" Height="24" Margin="16"
+                 Style="{DynamicResource MaterialDesignCircularProgressBar}"
+                 Value="{Binding Progress, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </materialDesign:DialogHost>
 </Window>
