@@ -18,7 +18,6 @@ namespace DavidMaterialWPFDemo.ViewModels
             while (Progress < 100)
             {
                 ++Progress;
-                //Thread.Sleep(10);
             }
             return 0;
         }
