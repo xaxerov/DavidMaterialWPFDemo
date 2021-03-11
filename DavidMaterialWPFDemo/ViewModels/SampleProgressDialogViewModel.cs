@@ -13,16 +13,14 @@ namespace DavidMaterialWPFDemo.ViewModels
             Progress = 0;
         }
 
-        public bool Execute()
+        public int Execute()
         {
-            bool success = false;
-            while (Progress <= 100)
+            while (Progress < 100)
             {
-                Thread.Sleep(100);
                 ++Progress;
+                //Thread.Sleep(10);
             }
-            success = true;
-            return success;
+            return 0;
         }
 
         private double _progress;

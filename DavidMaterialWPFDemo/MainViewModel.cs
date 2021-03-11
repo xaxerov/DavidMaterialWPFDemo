@@ -49,7 +49,8 @@ namespace DavidMaterialWPFDemo
             //note, you can also grab the session when the dialog opens via the DialogOpenedEventHandler
 
             //lets run a fake operation for 3 seconds then close this baby.
-            progressViewModel.Execute()
+            progressViewModel.Execute();
+            Task.Delay(0)
                 .ContinueWith((t, _) => eventArgs.Session.Close(false), null,
                     TaskScheduler.FromCurrentSynchronizationContext());
         }
