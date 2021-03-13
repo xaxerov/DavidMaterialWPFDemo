@@ -22,6 +22,12 @@ namespace DavidMaterialWPFDemo
             _progress = 0;
             Progress = 0;
 
+            var paletteHelper = new PaletteHelper();
+            ITheme theme = paletteHelper.GetTheme();
+            theme.SetBaseTheme(Theme.Dark);
+
+            paletteHelper.SetTheme(theme);
+
             _worker = new BackgroundWorker();
             _worker.WorkerReportsProgress = true;
             _worker.DoWork += worker_DoWork;
@@ -32,7 +38,7 @@ namespace DavidMaterialWPFDemo
 
         void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i <= 100; i++)
             {
                 (sender as BackgroundWorker).ReportProgress(i);
                 Thread.Sleep(100);
