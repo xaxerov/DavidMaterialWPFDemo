@@ -14,13 +14,42 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
-    <materialDesign:DialogHost
+
+
+    <Window.Resources>
+        <Style TargetType="MediaElement">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MediaElement.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <MediaTimeline Source="Videos/MTX.mp4"    
+                                            RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <MediaElement Source="Videos/MTX.mp4" Opacity="0.9"></MediaElement>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+    </Grid>
+
+
+    <!--<materialDesign:DialogHost
         Identifier="RootDialog"
         DialogTheme="Inherit">
 
         <StackPanel>
             <materialDesign:Card Padding="32" Margin="16">
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock >
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
             </materialDesign:Card>
             <Button
                 Command="{Binding RunExtendedDialogCommand}"
@@ -42,5 +71,5 @@
                 </ProgressBar>
             </Grid>
         </StackPanel>
-    </materialDesign:DialogHost>
+    </materialDesign:DialogHost>-->
 </Window>

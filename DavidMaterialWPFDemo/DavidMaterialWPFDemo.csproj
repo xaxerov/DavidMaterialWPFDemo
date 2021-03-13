@@ -10,4 +10,13 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Videos\MTX.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Video\MTX.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
